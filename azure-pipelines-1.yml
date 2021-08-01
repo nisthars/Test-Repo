@@ -14,7 +14,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Write your Write-Host $(System.DefaultWorkingDirectory)
+      Write-Host $(System.DefaultWorkingDirectory)
       Write-Host $(Build.ArtifactStagingDirectory)
       Write-Host "$env:SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
       Write-Host $(Pipeline.Workspace)
