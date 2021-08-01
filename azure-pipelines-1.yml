@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write your Write-Host $(System.DefaultWorkingDirectory)
+      Write-Host $(Build.ArtifactStagingDirectory)
+      Write-Host "$env:SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
+      Write-Host $(Pipeline.Workspace)
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
